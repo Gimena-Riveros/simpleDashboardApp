@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   loading = false;
 
-  constructor(private formbuilder: FormBuilder, private _snackBar: MatSnackBar) { 
+  constructor(private formbuilder: FormBuilder, private _snackBar: MatSnackBar, private router: Router) { 
     this.form = this.formbuilder.group({
       user:['',Validators.required],
       password:['',Validators.required]
@@ -30,10 +31,15 @@ export class LoginComponent implements OnInit {
     //  HARDCODEAMOS  LOGIN POR FALTA DE  BACKEND.
     if(user=="GimenaOK" && password=="admin321") {
       //  REDIRECCIONAMOS A DASHBOARD APP.
+      this.fakeLoading();
+      //  RESET AL FORMULARIO UNA VEZ INGRESAMOS.
+      this.form.reset();
     }
     else {
       //  MOSTRAMOS UN  MENSAJE DE  ERROR.
       this.error();
+      //  RESET AL FORMULARIO AL ERRAR INGRESO.
+      this.form.reset();
     }
   }
 
@@ -45,4 +51,11 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  fakeLoading() {
+    this.loading = true;
+    setTimeout(() => {
+      //  AGREGAR REDIRECCIONAMIENTO A DASHBOARD.
+      this.router.navigate(['dashboard']);
+    }, 1500);
+  }
 }

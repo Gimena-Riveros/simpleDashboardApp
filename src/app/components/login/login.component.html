@@ -1,8 +1,8 @@
 <div class="body">
     <div class="login">
-        <mat-spinner class="spinner" diameter="50"></mat-spinner>
+        <mat-spinner *ngIf="loading" class="spinner" diameter="50"></mat-spinner>
 
-        <form [formGroup]="form" (ngSubmit)="signin()">
+        <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="signin()">
             <img src="./assets/img/user.png" width="50%"  alt="user">
             <h1>Login</h1>
             <mat-form-field class="width-input" appearance="fill">
@@ -14,7 +14,7 @@
                 <input type="password" matInput formControlName="password">
             </mat-form-field>
             <br>
-            <button type="submit" class="width-input button-login" mat-raised-button color="primary" [disabled]="form.invalid">Signin</button>
+            <button type="submit" class="width-input button-login" mat-raised-button color="primary" [disabled]="form.invalid">Sign in</button>
         </form>
     </div>
   </div>
