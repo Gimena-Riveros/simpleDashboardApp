@@ -7,14 +7,14 @@
 }
 .login  {
     width: 100%;
-    max-width: 20.63rem;
+    max-width: 20.63rem;/*330px*/
     text-align: center;
 }
 .width-input {
     width: 80%;
 }
 .button-login {
-    height: 3.14rem;
+    height: 3.14rem; /*50px*/
 }
 .spinner {
     margin: 0 auto;

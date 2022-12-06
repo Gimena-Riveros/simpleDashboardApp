@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 //  Components
 import { LoginComponent } from './components/login/login.component';
 import { SharedAngularModule } from './components/shared-angular/shared-angular.module';
@@ -19,7 +18,7 @@ import { SharedAngularModule } from './components/shared-angular/shared-angular.
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedAngularModule
+    SharedAngularModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

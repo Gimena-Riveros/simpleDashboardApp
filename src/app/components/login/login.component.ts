@@ -26,8 +26,6 @@ export class LoginComponent implements OnInit {
     const user = this.form.value.user;
     const password = this.form.value.password;
 
-    console.log(user);
-    console.log(password);
     //  HARDCODEAMOS  LOGIN POR FALTA DE  BACKEND.
     if(user=="GimenaOK" && password=="admin321") {
       //  REDIRECCIONAMOS A DASHBOARD APP.

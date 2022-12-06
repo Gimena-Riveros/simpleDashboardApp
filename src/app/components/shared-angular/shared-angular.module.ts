@@ -11,7 +11,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -23,7 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     ReactiveFormsModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    MatToolbarModule
+    MatToolbarModule  
   ],
   exports: [
     MatSliderModule,
@@ -37,3 +36,4 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   ]
 })
 export class SharedAngularModule { }
+/*EXPORTO LOS MODULOS ARRIBA PARA QUE SEAN VISIBLES A TODO EL PROYECTO*/
