@@ -13,7 +13,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatTableModule } from '@angular/material/table';
 
 /*SON TODOS LOS COMPONENTES USADOS POR LA APP EN UN SOLO .module.ts*/
 @NgModule({
@@ -29,7 +29,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatProgressSpinnerModule,
     MatToolbarModule,
     MatIconModule,
-    HttpClientModule  
+    HttpClientModule,
+    MatTableModule  
   ],
   exports: [
     MatSliderModule,
@@ -41,7 +42,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatProgressSpinnerModule,
     MatToolbarModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ]
 })
 export class SharedAngularModule { }
