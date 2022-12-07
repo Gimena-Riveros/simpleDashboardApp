@@ -5,7 +5,7 @@
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       
-        <!-- Position Column -->
+        <!-- User Column -->
         <ng-container matColumnDef="user">
           <th mat-header-cell *matHeaderCellDef> USER </th>
           <td mat-cell *matCellDef="let element"> {{element.user}} </td>
@@ -17,13 +17,13 @@
           <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
       
-        <!-- Weight Column -->
+        <!-- Surname Column -->
         <ng-container matColumnDef="surname">
           <th mat-header-cell *matHeaderCellDef> SURNAME </th>
           <td mat-cell *matCellDef="let element"> {{element.surname}} </td>
         </ng-container>
       
-        <!-- Symbol Column -->
+        <!-- Sex Column -->
         <ng-container matColumnDef="sex">
           <th mat-header-cell *matHeaderCellDef> SEX </th>
           <td mat-cell *matCellDef="let element"> {{element.sex}} </td>
