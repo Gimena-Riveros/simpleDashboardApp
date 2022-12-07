@@ -12,7 +12,7 @@ const listUsers: User[] = [
   {user: "GimeOK", name: "Gimena", surname: "Riveros", sex: "Female"},
   {user: "ngarcia", name: "Noe", surname: "Garcia", sex: "Male"},
   {user: "GimeOK", name: "Gimena", surname: "Riveros", sex: "Female"},
-  {user: "MarceloOK", name: "Claudio", surname: "Imberlina", sex: "Male"},
+  {user: "alturing", name: "Allan", surname: "Turing", sex: "Male"},
   {user: "jsmith", name: "John", surname: "Smith", sex: "Male"},
 ]
 
