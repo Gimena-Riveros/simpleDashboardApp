@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   //  FUNCION PARA INGRESAR A MI DASHBOARD APP
   signin() {
     const user = this.form.value.user;

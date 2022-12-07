@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '**', redirectTo: 'login', pathMatch: 'full' }
 ];
 /*
-CARGA PEREZOSA carga componentes de a poco, a medida que sea requerido por usuario
+CARGA PEREZOSA carga algunos componentes necesarios y luego otros a medida que sea requerido por usuario
 Y PROMESA (then)
 path: 'dashboard', loadChildren: () => import('./components/dashboard/dashboard.module').then(x => x.DashboardModule) },
 */
