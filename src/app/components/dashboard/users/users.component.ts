@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from 'src/app/interfaces/users';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -10,28 +14,45 @@ import { User } from 'src/app/interfaces/users';
 })
 export class UsersComponent implements OnInit {
 
-  listUsers: User[] = [
-    {user: "hyalejandria", name: "Hypatia", surname: "deAlejandria", sex: "Female"},
-    {user: "leodavinci", name: "Leonardo", surname: "daVinci", sex: "Male"},
-    {user: "lfSoto", name: "Lucas", surname: "Soto", sex: "Male"},
-    {user: "macurie", name: "Marie", surname: "Curie", sex: "Female"},
-    {user: "jperalta", name: "John", surname: "Peralta", sex: "Male"},
-    {user: "GimeOK", name: "Gimena", surname: "Riveros", sex: "Female"},
-    {user: "GimeOK", name: "Gimena", surname: "Riveros", sex: "Female"},
-    {user: "ngarcia", name: "Noe", surname: "Garcia", sex: "Male"},
-    {user: "alturing", name: "Allan", surname: "Turing", sex: "Male"},
-    {user: "jsmith", name: "John", surname: "Smith", sex: "Male"},
-  ];
+  listUsers: User[] = [];
 
   displayedColumns: string[] = ['user', 'name', 'surname', 'sex', 'actions'];
-  dataSource = new MatTableDataSource(this.listUsers);
-  constructor() { }
+  dataSource!: MatTableDataSource<any>;
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  
+  constructor(private _userService:UserService, private _snackBar: MatSnackBar) { }
+
+  /* AL INICIAR EL COMPONENTE, CARGO LOS USUARIOS DESDE EL SERVICIO */
   ngOnInit(): void {
+    this.loadUsers();
+  }
+
+  loadUsers() {
+    this.listUsers = this._userService.getUser();
+    this.dataSource = new MatTableDataSource(this.listUsers);
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  deleteUser(index: number) {
+    console.log(index);
+    this._userService.deleteUser(index);
+    this.loadUsers();
+
+    this._snackBar.open('User delete successfully.','', {
+      duration: 1000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    })
   }
 }

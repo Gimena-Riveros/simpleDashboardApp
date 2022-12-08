@@ -11,6 +11,6 @@ table {
   }
 
   .mat-form-field {
-    font-size: 14px;
+    font-size: 0.875rem;/*14px*/
     width: 100%;
   }

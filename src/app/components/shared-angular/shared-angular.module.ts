@@ -15,6 +15,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 /*SON TODOS LOS COMPONENTES USADOS POR LA APP EN UN SOLO .module.ts*/
 @NgModule({
@@ -32,7 +34,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     HttpClientModule,
     MatTableModule,
-    MatTooltipModule 
+    MatTooltipModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports: [
     MatSliderModule,
@@ -46,7 +50,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     HttpClientModule,
     MatTableModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class SharedAngularModule { }
